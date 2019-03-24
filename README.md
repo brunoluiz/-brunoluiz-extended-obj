@@ -37,8 +37,8 @@ console.log(e.BAR) // 2
 Create an `Enum` but with the extras added by `ExtendedObject`
 
 ```js
-const { Enum } = require('@brunoluiz/extended-obj')
-const e = Enum(['FOO', 'BAR'])
+const { ExtendedEnum } = require('@brunoluiz/extended-obj')
+const e = ExtendedEnum(['FOO', 'BAR'])
 
 console.log(e.FOO) // 1
 console.log(e.getByValue(1)) // 'FOO'
