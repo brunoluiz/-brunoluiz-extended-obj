@@ -10,7 +10,7 @@ Create a key-value map with extra methods, such as
 - `keys()`: returns object keys
 - `values()`: returns object values
 
-```
+```js
 const { ExtendedObject } = require('@brunoluiz/extended-obj')
 const o = ExtendedObject({ FOO: 'BAR' })
 
@@ -24,7 +24,7 @@ console.log(o.keys()) // ['FOO']
 
 Maps an array to a key-value map, where the values will be `[array item index] + 1`
 
-```
+```js
 const { Enum } = require('@brunoluiz/extended-obj')
 const e = Enum(['FOO', 'BAR'])
 
@@ -36,7 +36,7 @@ console.log(e.BAR) // 2
 
 Create an `Enum` but with the extras added by `ExtendedObject`
 
-```
+```js
 const { Enum } = require('@brunoluiz/extended-obj')
 const e = Enum(['FOO', 'BAR'])
 
