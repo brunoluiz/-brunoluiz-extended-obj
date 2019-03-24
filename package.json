@@ -4,7 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "build": "tsc",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm run lint && npm run test"
   },
   "keywords": [],
   "author": "Bruno Luiz da Silva <contact@brunoluiz.net> (https://brunoluiz.net/)",
@@ -12,8 +20,10 @@
   "devDependencies": {
     "@types/jest": "^24.0.11",
     "jest": "^24.5.0",
-    "prettier-standard": "^9.1.1",
+    "prettier": "^1.16.4",
     "ts-jest": "^24.0.0",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.4000"
   }
 }
