@@ -23,7 +23,7 @@ describe("extended-obj", () => {
 
   it("should return key on invalid get()", () => {
     const obj = ExtendedObject({ FOO: "BAR" });
-    expect(obj.get("X")).toBe("X");
+    expect(obj.get("X")).toBe(undefined);
   });
 
   it("should return all values", () => {

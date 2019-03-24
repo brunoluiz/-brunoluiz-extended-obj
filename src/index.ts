@@ -1,28 +1,28 @@
-type Key = string | number;
-type Value = any;
-
-interface KeyValueMap {
-  [k: string]: Value;
-}
-
-interface IExtendedObject {
-  getByValue(v: Value): Key;
+export interface IExtendedObject {
+  getByValue(v: Value): Key | undefined;
   get(k: Key): Value;
   values(): Value[];
   keys(): Key[];
+  entries(): Entries;
   [k: string]: Value;
 }
 
+type Key = string;
+type Value = any;
+type KeyValueMap = { [k: string]: Value | undefined };
+type Entries = string[][];
+
 export const ExtendedObject = (obj: any): IExtendedObject => {
-  const getByValue = (v: Value) => Object.keys(obj).find(key => obj[key] === v);
+  const getByValue = (v: Value): Key | undefined =>
+    Object.keys(obj).find(key => obj[key] === v);
 
-  const get = (k: Key) => (obj[k] ? obj[k] : k);
+  const get = (k: Key): Value => obj[k];
 
-  const values = () => Object.values(obj);
+  const values = (): Value[] => Object.values(obj);
 
-  const keys = () => Object.keys(obj);
+  const keys = (): Key[] => Object.keys(obj);
 
-  const entries = () => Object.entries(obj);
+  const entries = (): Entries => Object.entries(obj);
 
   return {
     ...obj,
@@ -34,10 +34,11 @@ export const ExtendedObject = (obj: any): IExtendedObject => {
   };
 };
 
-export const ExtendedEnum = (arr: Key[]): IExtendedObject => {
-  const obj = arr.reduce((acc: KeyValueMap, v: Key, index: number) => {
-    return { ...acc, [v]: index };
+export const Enum = (arr: Key[]): KeyValueMap => {
+  return arr.reduce((acc: KeyValueMap, v: Key, index: number) => {
+    return { ...acc, [v]: index + 1 };
   }, {});
-
-  return ExtendedObject(obj);
 };
+
+export const ExtendedEnum = (arr: Key[]): IExtendedObject =>
+  ExtendedObject(Enum(arr)) as IExtendedObject;
