@@ -1,4 +1,4 @@
-import { Key, Value, IExtendedObject, Entries } from ".";
+import { Entries, IExtendedObject, Key, Value } from ".";
 
 export const ExtendedObject = (obj: any): IExtendedObject => {
   const getByValue = (v: Value): Key | undefined =>
@@ -14,10 +14,10 @@ export const ExtendedObject = (obj: any): IExtendedObject => {
 
   return {
     ...obj,
-    getByValue,
-    get,
-    values,
-    keys,
     entries
+    get,
+    getByValue,
+    keys,
+    values,
   } as IExtendedObject;
 };

@@ -1,6 +1,6 @@
 export interface IExtendedObject {
-  getByValue(v: Value): Key | undefined;
   get(k: Key): Value;
+  getByValue(v: Value): Key | undefined;
   values(): Value[];
   keys(): Key[];
   entries(): Entries;
@@ -9,7 +9,9 @@ export interface IExtendedObject {
 
 export type Key = string;
 export type Value = any;
-export type KeyValueMap = { [k: string]: Value | undefined };
+export interface IKeyValueMap {
+  [k: string]: Value | undefined;
+}
 export type Entries = string[][];
 
 export * from "./enum";
