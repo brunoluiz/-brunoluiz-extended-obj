@@ -1,0 +1,19 @@
+{
+  "name": "@brunoluiz/extended-obj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Bruno Luiz da Silva <contact@brunoluiz.net> (https://brunoluiz.net/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "jest": "^24.5.0",
+    "prettier-standard": "^9.1.1",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.4000"
+  }
+}

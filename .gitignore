@@ -1,0 +1,8 @@
+node_modules/
+typings/
+.cache/
+lib/
+.npm
+.eslintcache
+.env
+.DS_Store
