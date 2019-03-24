@@ -1,6 +1,6 @@
 {
   "name": "@brunoluiz/extended-obj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Objects and Enums with extended methods",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -16,13 +16,13 @@
     "postversion": "git push && git push --tags",
     "prepublishOnly": "npm run lint && npm run test"
   },
-  "keywords": ["structure", "object", "enum"],
+  "keywords": [
+    "structure",
+    "object",
+    "enum"
+  ],
   "author": "Bruno Luiz da Silva <contact@brunoluiz.net> (https://brunoluiz.net/)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brunoluiz/extended-obj.git"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brunoluiz/extended-obj.git"
