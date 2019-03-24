@@ -14,6 +14,6 @@ export interface IKeyValueMap {
 }
 export type Entries = string[][];
 
-export * from "./enum";
-export * from "./extended-enum";
-export * from "./extended-object";
+export * from './enum';
+export * from './extended-enum';
+export * from './extended-object';

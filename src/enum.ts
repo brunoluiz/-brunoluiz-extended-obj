@@ -1,4 +1,4 @@
-import { IKeyValueMap, Key } from ".";
+import { IKeyValueMap, Key } from '.';
 
 export const Enum = (arr: Key[]): IKeyValueMap => {
   return arr.reduce((acc: IKeyValueMap, v: Key, index: number) => {
