@@ -37,4 +37,8 @@ describe('extended-enum', () => {
   it('should return all entries', () => {
     expect(obj.entries()).toEqual([['FOO', 1], ['BAR', 2]]);
   });
+
+  it('should return JSON string', () => {
+    expect(obj.toJSON()).toEqual(JSON.stringify({ FOO: 1, BAR: 2 }));
+  });
 });

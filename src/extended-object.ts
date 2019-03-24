@@ -11,12 +11,15 @@ export const ExtendedObject = (obj: any): IExtendedObject => {
 
   const entries = (): Entries => Object.entries(obj);
 
+  const toJSON = (): string => JSON.stringify(obj);
+
   return {
     ...obj,
     entries,
     get,
     getByValue,
     keys,
+    toJSON,
     values,
   } as IExtendedObject;
 };

@@ -1,9 +1,10 @@
 export interface IExtendedObject {
+  entries(): Entries;
   get(k: Key): Value;
   getByValue(v: Value): Key | undefined;
-  values(): Value[];
   keys(): Key[];
-  entries(): Entries;
+  toJSON(): string;
+  values(): Value[];
   [k: string]: Value;
 }
 

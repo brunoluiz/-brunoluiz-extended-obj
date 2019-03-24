@@ -42,4 +42,9 @@ describe('extended-obj', () => {
     const obj = ExtendedObject({ FOO: 'BAR', X: 'Y' });
     expect(obj.entries()).toEqual([['FOO', 'BAR'], ['X', 'Y']]);
   });
+
+  it('should return JSON string', () => {
+    const obj = ExtendedObject({ FOO: 'BAR', X: 'Y' });
+    expect(obj.toJSON()).toEqual(JSON.stringify({ FOO: 'BAR', X: 'Y' }));
+  });
 });
