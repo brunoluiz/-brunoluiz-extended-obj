@@ -1,7 +1,7 @@
 {
   "name": "@brunoluiz/extended-obj",
   "version": "1.0.0",
-  "description": "",
+  "description": "Objects and Enums with extended methods",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -15,7 +15,7 @@
     "postversion": "git push && git push --tags",
     "prepublishOnly": "npm run lint && npm run test"
   },
-  "keywords": [],
+  "keywords": ["structure", "object", "enum"],
   "author": "Bruno Luiz da Silva <contact@brunoluiz.net> (https://brunoluiz.net/)",
   "license": "MIT",
   "devDependencies": {
@@ -26,5 +26,8 @@
     "tslint": "^5.14.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.4000"
-  }
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }

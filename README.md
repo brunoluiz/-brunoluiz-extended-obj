@@ -1,6 +1,6 @@
 # @brunoluiz/extended-obj
 
-Objects and enums with extended methods
+Objects and Enums with extended methods
 
 ## ExtendedObject
 
