@@ -1,25 +1,11 @@
 import { Entries, IKeyValue, Key, Value } from '.';
 
-export const KeyValueObject = (obj: any): IKeyValue => {
-  const getByValue = (v: Value): Key | undefined => Object.keys(obj).find(key => obj[key] === v);
-
-  const get = (k: Key): Value => obj[k];
-
-  const values = (): Value[] => Object.values(obj);
-
-  const keys = (): Key[] => Object.keys(obj);
-
-  const entries = (): Entries => Object.entries(obj);
-
-  const toJSON = (): string => JSON.stringify(obj);
-
-  return {
-    ...obj,
-    entries,
-    get,
-    getByValue,
-    keys,
-    toJSON,
-    values,
-  } as IKeyValue;
-};
+export const KeyValue = (obj: { [k: string]: Value }): IKeyValue => ({
+  ...obj,
+  entries: (): Entries => Object.entries(obj),
+  get: (k: Key): Value => obj[k],
+  getByValue: (v: Value): Key | undefined => Object.keys(obj).find(key => obj[key] === v),
+  keys: (): Key[] => Object.keys(obj),
+  toJSON: (): string => JSON.stringify(obj),
+  values: (): Value[] => Object.values(obj),
+});

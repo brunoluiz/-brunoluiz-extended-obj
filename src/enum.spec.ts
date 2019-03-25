@@ -1,6 +1,6 @@
 import { Enum } from './index';
 
-describe('enum', () => {
+describe('Enum', () => {
   const obj = Enum(['FOO', 'BAR']);
 
   it('should build extended enum and work as enum', () => {
