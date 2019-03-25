@@ -6,9 +6,10 @@ Extended objects for JavaScript
 
 Create a key-value map with extra methods, such as
 
-- `getByValue(v: any)`: returns value's key
-- `keys()`: returns object keys
-- `values()`: returns object values
+- `getByValue(v: string)`: returns value's key
+- `keys(): string`: returns object keys
+- `values(): string | number`: returns object values
+- `toJSON(): string number`: returns object as a JSON (same as JSON.stringify())
 
 ```js
 const { KeyValue } = require('@brunoluiz/extended-obj')
