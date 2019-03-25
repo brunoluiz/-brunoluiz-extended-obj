@@ -1,6 +1,6 @@
-import { Entries, IExtendedObject, Key, Value } from '.';
+import { Entries, IKeyValue, Key, Value } from '.';
 
-export const ExtendedObject = (obj: any): IExtendedObject => {
+export const KeyValueObject = (obj: any): IKeyValue => {
   const getByValue = (v: Value): Key | undefined => Object.keys(obj).find(key => obj[key] === v);
 
   const get = (k: Key): Value => obj[k];
@@ -21,5 +21,5 @@ export const ExtendedObject = (obj: any): IExtendedObject => {
     keys,
     toJSON,
     values,
-  } as IExtendedObject;
+  } as IKeyValue;
 };
