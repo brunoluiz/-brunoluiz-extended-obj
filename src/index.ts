@@ -1,15 +1,14 @@
 export interface IKeyValue {
   entries(): Entries;
   get(k: Key): Value;
-  getByValue(v: Value): Key | undefined;
+  getByValue(v: Value): Key;
   keys(): Key[];
   toJSON(): string;
-  values(): Value[];
-  [k: string]: Value | undefined;
+  values(): [string | number][];
 }
 
 export type Key = string;
-export type Value = any;
+export type Value = string | number | undefined;
 export type Entries = string[][];
 
 export * from './enum';
