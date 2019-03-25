@@ -5,6 +5,7 @@ export interface IKeyValue {
   keys(): Key[];
   toJSON(): string;
   values(): Value[];
+  [k: string]: any;
 }
 
 export type Key = string;
