@@ -1,10 +1,9 @@
-import { IKeyValue, KeyValue, Key } from '.';
+import { IKeyValue, Key, KeyValue } from '.';
 
-export const Enum = (arr: Key[]): IKeyValue => {
-  const toObject = (arr: Key[]): any =>
-    arr.reduce((acc, v, index) => ({ ...acc, [v]: index + 1 }), {});
+export const Enum = (keys: Key[]): IKeyValue => {
+  const map = keys.reduce((acc, v, index) => ({ ...acc, [v]: index + 1 }), {});
 
-  const _kv: IKeyValue = KeyValue(toObject(arr));
+  const kv: IKeyValue = KeyValue(map);
 
-  return _kv;
+  return kv;
 };

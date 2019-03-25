@@ -1,7 +1,7 @@
 import { Entries, IKeyValue, Key, Value } from '.';
 
 export const KeyValue = (obj: { [k: string]: Value }): IKeyValue => {
-  const _kv: IKeyValue = {
+  const kv: IKeyValue = {
     ...obj,
     entries: (): Entries => Object.entries(obj),
     get: (k: Key): Value => obj[k],
@@ -11,5 +11,5 @@ export const KeyValue = (obj: { [k: string]: Value }): IKeyValue => {
     values: (): Value[] => Object.values(obj),
   };
 
-  return _kv;
+  return kv;
 };
